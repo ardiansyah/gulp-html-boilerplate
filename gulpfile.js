@@ -67,10 +67,14 @@ gulp.task('scripts', function() {
       .pipe(reload({stream: true}));
 });
 
-// gulp.task('img', function () {
-//   return gulp.src('styles/img/**')
-//     pipe( gulp.dest(src.dist) )
-//     .pipe(reload({stream: true }));
-// });
+gulp.task('img', function () {
+  return gulp.src('src/assets/img/**')
+  .pipe(gulp.dest('dist/assets/img'));
+});
 
-gulp.task('production', ['nunjucks', 'html', 'minify-css', 'scripts']);
+gulp.task('font', function () {
+  return gulp.src('src/assets/fonts/**')
+  .pipe(gulp.dest('dist/assets/fonts'));
+});
+
+gulp.task('production', ['nunjucks', 'html', 'minify-css', 'scripts', 'img', 'font']);
