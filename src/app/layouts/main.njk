@@ -7,10 +7,10 @@
     </head>
     <body>
         <div id="main">
-            {% include "components/header.njk" %}
+            {% include "components/header/header.njk" %}
             {% block content %} {% endblock %}
         </div>
-        {% include "components/footer.njk" %} 
+        {% include "components/footer/footer.njk" %} 
         <script src="./dist/assets/js/scripts.js"></script>
     </body>
 </html>

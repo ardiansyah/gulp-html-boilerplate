@@ -1,1 +1,12 @@
+@import "node_modules/normalize.css/normalize";
 @import "node_modules/quotrez/scss/quotrez";
+@import "mixins.scss";
+
+.hero-homepage{
+    width: 100%;
+    height: 50vh;
+    border: 1px black solid;
+    background-image: url('../images/home-header.jpg');
+
+    @include bg-img();
+}
