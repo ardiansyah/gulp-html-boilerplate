@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        {% block title %} {% endblock %}
+        <link rel="stylesheet" href="./dist/assets/css/app.css">
+    </head>
+    <body>
+        <div id="main">
+            {% include "components/header.njk" %}
+            {% block content %} {% endblock %}
+        </div>
+        {% include "components/footer.njk" %} 
+        <script src="./dist/assets/js/scripts.js"></script>
+    </body>
+</html>
