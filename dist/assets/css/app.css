@@ -901,16 +901,8 @@ template {
   .columns.q-desktop {
     display: flex; } }
 
-h1 {
-  font-size: 60px;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
-  h1.active {
-    opacity: 1; }
+p {
+  margin: 0; }
 
 .header-homepage {
   /* display: flex;
@@ -976,16 +968,65 @@ h1 {
       z-index: 1;
       margin-bottom: 200px; }
     .block .block-banner-container .banner-text {
+      position: relative;
       border: 1px green solid;
-      padding-left: 5rem; }
+      padding-left: 5rem;
+      display: block;
+      height: 580px; }
+      .block .block-banner-container .banner-text h1, .block .block-banner-container .banner-text h2, .block .block-banner-container .banner-text h3 {
+        position: absolute;
+        max-width: 500px;
+        font-size: 60px;
+        opacity: 0;
+        line-height: 1;
+        border: 1px black solid;
+        margin: 0;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease; }
+        .block .block-banner-container .banner-text h1.active, .block .block-banner-container .banner-text h2.active, .block .block-banner-container .banner-text h3.active {
+          opacity: 1; }
       .block .block-banner-container .banner-text h1 {
-        max-width: 500px; }
+        top: 10%; }
+      .block .block-banner-container .banner-text h2 {
+        -webkit-transition-delay: 0.1s;
+        transition-delay: 0.1s;
+        top: 24%; }
+      .block .block-banner-container .banner-text h3 {
+        -webkit-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+        top: 38%; }
       .block .block-banner-container .banner-text p {
         font-size: 14px;
         max-width: 400px;
-        line-height: 20px; }
+        line-height: 20px;
+        position: absolute;
+        top: 58%;
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        -o-transform: translateY(50px);
+        transform: translateY(50px);
+        -webkit-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -moz-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -ms-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -o-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -webkit-transition-delay: 0.3s;
+        transition-delay: 0.3s; }
+        .block .block-banner-container .banner-text p.active {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+          transform: translateY(0); }
       .block .block-banner-container .banner-text .brush-btn {
-        left: 60px;
+        position: absolute;
+        left: 80px;
         bottom: 0;
         background-image: url("../img/home/img_button.png");
         width: 300px;
@@ -1004,7 +1045,27 @@ h1 {
         padding: 10px 20px 10px 20px;
         margin-top: 40px;
         display: inline-block;
-        color: white; }
+        color: white;
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        -o-transform: translateY(50px);
+        transform: translateY(50px);
+        -webkit-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -moz-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -ms-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -o-transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        transition: all 0.4s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -webkit-transition-delay: 0.4s;
+        transition-delay: 0.4s; }
+        .block .block-banner-container .banner-text .brush-btn.active {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+          transform: translateY(0); }
     .block .block-banner-container .banner-img {
       border: 1px purple solid; }
       .block .block-banner-container .banner-img.img-1 {

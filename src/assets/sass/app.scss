@@ -3,14 +3,10 @@
 @import "function.scss";
 
 
-h1{
-    font-size: 60px;
-    opacity: 0;
 
-    @include trans(all .5s ease);
-    &.active{
-        opacity: 1
-    }
+
+p{
+    margin: 0;
 }
 
 
@@ -96,20 +92,61 @@ h1{
 
 
         .banner-text{
+            position: relative;
             border: 1px green solid;
             padding-left: 5rem;
-            h1{
+            display: block;
+            height: 580px;
+
+
+            h1, h2, h3{
+                position: absolute;
                 max-width: 500px;
+                font-size: 60px;
+                opacity: 0;
+                line-height: 1;
+                border: 1px black solid;
+                margin: 0;
+            
+                @include trans(all .4s ease);
+                &.active{
+                    opacity: 1
+                }
+            }
+
+            h1{
+                top: 10%;
+            }
+            
+            h2{
+                @include trans-delay(.1s);
+                top: 24%;
+            }
+            
+            h3{
+                @include trans-delay(.2s);
+                top: 38%;
             }
 
             p{
                 font-size: 14px;
                 max-width: 400px;
                 line-height: 20px;
+                position: absolute;
+                top: 58%;
+                opacity: 0;
+                @include transform(translateY(50px));
+                @include trans(all .4s cubic-bezier(0.7, 0.01, 0.3, 1));
+                @include trans-delay(.3s);
+                &.active{
+                    opacity: 1;
+                    @include transform(translateY(0));
+                }
             }
 
             .brush-btn{
-                left : 60px;
+                position: absolute;
+                left : 80px;
                 bottom: 0;
                 background-image: url('../img/home/img_button.png');
                 width: 300px;
@@ -126,6 +163,15 @@ h1{
                 margin-top: 40px;
                 display: inline-block;
                 color: white;
+
+                opacity: 0;
+                @include transform(translateY(50px));
+                @include trans(all .4s cubic-bezier(0.7, 0.01, 0.3, 1));
+                @include trans-delay(.4s);
+                &.active{
+                    opacity: 1;
+                    @include transform(translateY(0));
+                }
             }
         }
 
