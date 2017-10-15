@@ -1,3 +1,243 @@
 @import "node_modules/normalize.css/normalize";
 @import "node_modules/quotrez/scss/quotrez";
-@import "mixins.scss";
+@import "function.scss";
+
+
+h1{
+    font-size: 60px;
+    opacity: 0;
+
+    @include trans(all .5s ease);
+    &.active{
+        opacity: 1
+    }
+}
+
+
+.header-homepage{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    @include flex-init();
+    @include justify-content(center);
+    @include align-items(center);
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/home/bg_hero.jpg');
+    text-align: center;
+
+    @include bg-img(cover, no-repeat, center);
+
+    .header-homepage-title-container{
+        max-width: 500px;
+        
+        h1{
+            color: white;
+        }
+    }
+    
+}
+
+.block{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+    width: 100%;
+    border: 1px blue solid;
+
+    &.section-2{
+        .block-banner-container{
+            position: relative;
+
+            .bg-img-brush{
+                position: absolute;
+                right: 2%;
+                width: 80%;
+                height: 100%;
+                @include bg-img(90% 110%, no-repeat, top);
+                background-image: url('../img/home/img_brush.png');
+            }
+        }
+
+    }
+
+    &.section-3{
+        @include bg-img(cover, no-repeat, top);
+        background-image: url('../img/home/bg_diagnosis_section.jpg');
+    }
+
+
+    &.colored-bg {
+        background: #F7F0E6;
+    }
+
+    .title-center{
+        text-align: center;
+        max-width: 600px;
+        display: inline-block;
+    }
+
+    .block-banner-container{
+        border: 1px red solid;
+        /* padding-top: 100px;
+        padding-bottom: 100px; */
+
+        .banner-text{
+            z-index: 1;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .banner-img{
+            z-index: 1;
+            margin-bottom: 200px;
+        }
+        
+
+
+        .banner-text{
+            border: 1px green solid;
+            padding-left: 5rem;
+            h1{
+                max-width: 500px;
+            }
+
+            p{
+                font-size: 14px;
+                max-width: 400px;
+                line-height: 20px;
+            }
+
+            .brush-btn{
+                left : 60px;
+                bottom: 0;
+                background-image: url('../img/home/img_button.png');
+                width: 300px;
+                height: 90px;
+                line-height: 60px;
+
+                border: 1px blue solid;
+                text-align: center;
+                @include bg-img(contain, no-repeat, center);
+
+                @include transform(translateX(-20px));
+
+                padding: 10px 20px 10px 20px;
+                margin-top: 40px;
+                display: inline-block;
+                color: white;
+            }
+        }
+
+        .banner-img{
+            border: 1px purple solid;
+            
+            &.img-1{
+                @include bg-img(cover, no-repeat, center);
+                background-image: url('../img/home/img_doctors_section.jpg');
+            }
+
+            &.img-2{
+                @include bg-img(contain, no-repeat, center);
+                background-image: url('../img/home/img_shop_section.png');
+            }
+        }
+    }
+
+    .testimonial-carousel{
+        padding: 0;
+        border: 2px red solid;
+
+        /deep/ .flickity-prev-next-button{
+            background: black;
+            @include transform(translate(10px, -40px));
+            @include card-shadow-soft();
+            .arrow {
+                fill: white;
+            }
+        }
+
+        .next{
+            right: -10px;
+        }
+
+        .previous{
+            left: -10px;
+        }
+
+        .testimonial-carousel-item{
+            width: 33.3333333333%;
+            padding: 10px 0px 50px 20px;
+            height: 450px;
+
+
+            &.is-selected{          
+                .carousel-item-inner{
+                    @include card-shadow-soft();
+                }
+            }
+    
+            .carousel-item-inner{
+                position: relative;
+                height: 100%;
+                padding: 20px 25px 0 25px;
+                border: 1px black solid;
+
+                
+                p{
+                    font-size: 16px;
+                }
+    
+                .stars-container{
+                    position: absolute;
+                    bottom: 25px;
+
+                    svg{
+                        margin-left: -5px;
+                    }
+    
+                    h4{
+                        margin: 0;
+                        margin-top: 10px;
+                    }
+                }
+
+                .profile-image{
+                    position: absolute;
+                    bottom: 25px;
+                    right: 25px;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    @include bg-img(cover, no-repeat, center);
+                    border: 1px blue solid;
+
+
+                    &.img-1{
+                        background-image: url('../img/home/img_review1.png');
+                    }
+
+                    &.img-2{
+                        background-image: url('../img/home/img_review2.png');
+                    }
+
+                    &.img-3{
+                        background-image: url('../img/home/img_review3.png');
+                    }
+
+                    
+                }
+            }
+        }
+    }
+
+    
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}

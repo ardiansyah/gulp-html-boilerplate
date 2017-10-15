@@ -16,7 +16,7 @@ const src = {
   dist  : 'dist/'
 };
 
-gulp.task('serve', ['scss', 'nunjucks', 'scripts'], function() {
+gulp.task('serve', ['scss', 'nunjucks', 'scripts', 'img', 'font'], function() {
   browserSync.init({
     server: "./dist/app",
     serveStatic: ['.', './dist/assets/css']
