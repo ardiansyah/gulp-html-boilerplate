@@ -19,7 +19,7 @@ const src = {
 gulp.task('serve', ['scss', 'nunjucks', 'scripts', 'img', 'font'], function() {
   browserSync.init({
     server: "./dist/app",
-    serveStatic: ['.', './dist/assets/css']
+    serveStatic: ['./dist']
   });
   gulp.watch(src.njk, ['nunjucks']),
   gulp.watch(src.scss, ['scss']);
@@ -29,11 +29,11 @@ gulp.task('serve', ['scss', 'nunjucks', 'scripts', 'img', 'font'], function() {
 
 // Converting njk files to html
 gulp.task('nunjucks', function() {
-  return gulp.src('src/app/**/*.+(html|njk|nunjucks)')
+  return gulp.src('src/app/templates/**/*.+(html|njk|nunjucks)')
     .pipe(nunjucksRender({
       path: ['src/app/']
     }))
-    .pipe(gulp.dest('dist/app'))
+    .pipe(gulp.dest('dist'))
     .pipe(reload({stream: true }));
 });
 
