@@ -21,7 +21,7 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0",
+    "normalize-scss": "^7.0.0",
     "quotrez": "^0.1.0"
   }
 }
